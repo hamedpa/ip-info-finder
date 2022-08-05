@@ -54,6 +54,10 @@ const extractIPInfo = async (ip) => {
   result.lat = result.Coordinates.split('/')[0].replace('(lat)', '').trim();
   result.lon = result.Coordinates.split('/')[1].replace('(long)', '').trim();
 
+  if (result['Postal code']) {
+    result.postalCode = result['Postal code'];
+    delete result['Postal code'];
+  }
   return result;
 };
 

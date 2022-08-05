@@ -11,26 +11,20 @@ const extractIPInfo = require("./modules/ip");
 
 const convertToLanguage = async (data, lang, currencyStatus) => {
   const input =
-    data.as +
+    data.City +
     " / " +
-    data.city +
+    data.Continent +
     " / " +
-    data.continent +
+    data.Country +
     " / " +
-    data.country +
-    " / " +
-    data.org +
-    " / " +
-    data.regionName;
+    data.Region;
   const res = await translate(input, { to: lang });
   try {
     const output = res.text.split(" / ");
-    data.as = output[0];
-    data.continent = output[1];
-    data.city = output[2];
-    if (!currencyStatus) data.country = output[3];
-    data.org = output[4];
-    data.regionName = output[5];
+    data.Continent = output[0];
+    data.City = output[1];
+    if (!currencyStatus) data.Country = output[2];
+    data.Region = output[3];
   } catch (err) {
     console.error(err);
   }

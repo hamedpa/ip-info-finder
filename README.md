@@ -339,29 +339,19 @@ ipInfo.getIPInfo('IP-ADDRESS','fr').then(data => {
 
 ```json
 {
-  "as": "AS14061 DigitaloCean، LLC",
-  "asname": "DIGITALOCEAN-ASN",
-  "city": "أمريكا الشمالية",
-  "continent": "نورث بيرغن",
-  "continentCode": "NA",
-  "country": "الولايات المتحدة",
-  "countryCode": "US",
-  "currency": "USD",
-  "district": "",
-  "hosting": true,
-  "isp": "DigitalOcean, LLC",
-  "lat": 40.793,
-  "lon": -74.0247,
-  "mobile": false,
-  "offset": -14400,
-  "org": "المحيط الرقمي",
-  "proxy": false,
-  "query": "2604:a880:400:d0::1ec5:f001",
-  "region": "NJ",
-  "regionName": "نيو جيرسي",
-  "status": "success",
-  "timezone": "America/New_York",
-  "zip": "07047"
+  "City": "Europe (UE)",
+  "Region": "Angleterre (ENG)",
+  "Country": "Royaume-Uni (GB)",
+  "Continent": "Londres",
+  "Coordinates": "51.5164 (lat) / -0.093 (long)",
+  "Time": "2022-08-05 21:35:14 (Europe/London)",
+  "ipAddress": "212.102.63.76",
+  "hostname": "unn-212-102-63-76.cdn77.com",
+  "provider": "Datacamp Limited",
+  "ASN": "60068",
+  "lat": "51.5164",
+  "lon": "-0.093",
+  "postalCode": "EC2V"
 }
 
 ```

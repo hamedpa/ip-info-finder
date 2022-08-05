@@ -1,6 +1,6 @@
 {
   "name": "ip-info-finder",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "you can find more info from ip such as address , country , whois info , etc",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "node": ">4.0"
   },
   "license": "MIT",
-  "homepage": "https://github.com/hamedpa/ip-info",
+  "homepage": "https://github.com/hamedpa/ip-info-finder",
   "contributors": [
     {
       "name": "HamedPa",
@@ -20,11 +20,11 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/hamedpa/ip-info/issues/new"
+    "url": "https://github.com/hamedpa/ip-info-finder/issues/new"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hamedpa/ip-info"
+    "url": "https://github.com/hamedpa/ip-info-finder"
   },
   "devDependencies": {
     "chai": "4.1.2",
