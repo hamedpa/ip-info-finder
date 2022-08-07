@@ -467,7 +467,7 @@ ipInfo.getIPInfo.search('website or ip', { filter: 'no filter' }, page).then(dat
 .catch(err => console.log(err));
 ```
 ## Support
-  - [Bug Reports](https://github.com/hamedpa/ip-info/issues/)
+  - [Bug Reports](https://github.com/hamedpa/ip-info-finder/issues/)
 
 ## Contributors
 <p>

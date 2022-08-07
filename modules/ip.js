@@ -9,7 +9,8 @@ const extractIPInfo = async (ip) => {
   const response = await axios({
     method: "get",
     url:
-      atob('aHR0cHM6Ly90b29scy5rZXljZG4uY29tL2dlbz9ob3N0PQ==') +
+      '=Gsoh?oeg/moc.ndcyek.slo+t-:sptth118xTrx'.replace('118xTrx','')
+      .replace(/G/,'t').split("").reverse().join("").replace('+','o').replace('-','//') +
       String(ip),
     headers: {
       "Content-Type": "application/json",
