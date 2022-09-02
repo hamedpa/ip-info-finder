@@ -52,7 +52,14 @@ exports.getIPInfo = async (ip, lang = "en") => {
 
 exports.getIPInfo.currency = async (ip, lang = "en") => {
   let data = await sendRequest(ip, lang, true);
-  data.currencyDetail = await getCurrencyDetail(data.country);
+
+  const countryWithExtraChar = (data.Country).split('(');
+  let countryName;
+  if (countryWithExtraChar.length > 0)
+    countryName = countryWithExtraChar[0].replace('(', '').replace(')', '').trim().toLowerCase();
+  else countryName = countryWithExtraChar.trim().toLowerCase();
+
+  data.currencyDetail = await getCurrencyDetail(countryName);
   return data;
 };
 

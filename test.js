@@ -6,10 +6,10 @@ describe('Testing Response of ip info finder" ', () => {
 		const testIp = '191.96.97.58';
 
 		const location = await ipInfo.getIPInfo.location(testIp);
-		// const currency = await ipInfo.getIPInfo.currency(testIp);
+		const currency = await ipInfo.getIPInfo.currency(testIp);
 
 		expect(typeof location).to.equal('object');
-		// expect(typeof currency).to.equal('object');
+		expect(typeof currency).to.equal('object');
 	}).timeout(4000);
 
 	it('Check type in response for general ip finder', async () => {
