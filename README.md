@@ -1,6 +1,6 @@
 # ip-info-finder
 [![npm](https://img.shields.io/npm/v/ip-info-finder.svg?style=flat-square)](https://www.npmjs.com/package/ip-info-finder)
-
+![building workflow](https://github.com/hamedpa/ip-info-finder/actions/workflows/nodejs.yml/badge.svg)
 ![alt text](./img/logo.png?raw=true)
 
 
@@ -57,21 +57,17 @@ ipInfo.getIPInfo('IP-ADDRESS').then(data => {
 #### Result 
 ```json
 {
-  "City": "London",
-  "Region": "England (ENG)",
-  "Postal code": "EC2V",
-  "Country": "United Kingdom (GB)",
-  "Continent": "Europe (EU)",
-  "Coordinates": "51.5164 (lat) / -0.093 (long)",
-  "Time": "2022-08-05 20:42:49 (Europe/London)",
-  "ipAddress": "212.102.63.76",
-  "hostname": "unn-212-102-63-76.cdn77.com",
-  "provider": "Datacamp Limited",
-  "ASN": "60068",
-  "lat": "51.5164",
-  "lon": "-0.093"
+  "Country": "United States (US)",
+  "Continent": "North America (NA)",
+  "Coordinates": "37.751 (lat) / -97.822 (long)",
+  "Time": "2022-12-15 05:49:37 (America/Chicago)",
+  "ipAddress": "28.106.238.158",
+  "hostname": "28.106.238.158",
+  "provider": "DNIC-AS-00749",
+  "ASN": "749",
+  "lat": "37.751",
+  "lon": "-97.822"
 }
-
 ```
 ## Optional setting
 
@@ -91,38 +87,36 @@ ipInfo.getIPInfo.location('IP-ADDRESS').then(data => {
 
 ```json
 {
-  "City": "London",
-  "Region": "England (ENG)",
-  "Postal code": "EC2V",
-  "Country": "United Kingdom (GB)",
-  "Continent": "Europe (EU)",
-  "Coordinates": "51.5164 (lat) / -0.093 (long)",
+  "Country": "United States (US)",
+  "Continent": "North America (NA)",
+  "Coordinates": "37.751 (lat) / -97.822 (long)",
+  "Time": "2022-12-15 05:59:09 (America/Chicago)",
+  "ipAddress": "28.106.238.158",
+  "hostname": "28.106.238.158",
+  "provider": "DNIC-AS-00749",
+  "ASN": "749",
+  "lat": "37.751",
+  "lon": "-97.822",
   "location": [
     {
-      "place_id": 143192862,
+      "place_id": 297371111,
       "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
-      "osm_type": "way",
-      "osm_id": 164201035,
-      "boundingbox": [ "51.5164009", "51.5165483", "-0.093147", "-0.0928321" ],
-      "lat": "51.5164746",
-      "lon": "-0.09298954999999956",
-      "display_name": "St Mary Aldermanbury, Aldermanbury, Cheap, City of London, Greater London, England, EC2V 7RF, United Kingdom",
-      "class": "historic",
-      "type": "ruins",
+      "osm_type": "relation",
+      "osm_id": 1070327,
+      "boundingbox": [ "37.733658", "38.1738097", "-98.473104", "-97.698692" ],
+      "lat": "37.930344",
+      "lon": "-98.1055753",
+      "display_name": "Reno County, Kansas, United States",
+      "class": "boundary",
+      "type": "administrative",
       "importance": 0.001,
-      "icon": "https://nominatim.openstreetmap.org/ui/mapicons/tourist_ruin.p.20.png",
+      "icon": "https://nominatim.openstreetmap.org/ui/mapicons/poi_boundary_administrative.p.20.png",
       "address": {
-        "historic": "St Mary Aldermanbury",
-        "road": "Aldermanbury",
-        "quarter": "Cheap",
-        "city": "City of London",
-        "ISO3166-2-lvl6": "GB-LND",
-        "state_district": "Greater London",
-        "state": "England",
-        "ISO3166-2-lvl4": "GB-ENG",
-        "postcode": "EC2V 7RF",
-        "country": "United Kingdom",
-        "country_code": "gb"
+        "county": "Reno County",
+        "state": "Kansas",
+        "ISO3166-2-lvl4": "US-KS",
+        "country": "United States",
+        "country_code": "us"
       }
     }
   ]
@@ -145,21 +139,33 @@ ipInfo.getIPInfo.whois('IP OR WEBSITE').then(data => {
 
 ```json
 {
-  "Domain Name": "github.com",
-  "Registry Domain ID": "1264983250_DOMAIN_COM-VRSN",
-  "Registrar WHOIS Server": "whois.markmonitor.com",
-  "Registrar URL": "http",
-  "Updated Date": "2020-09-08T09",
-  "Creation Date": "2007-10-09T18",
-  "Registrar Registration Expiration Date": "2022-10-09T07",
-  "Registrar": "MarkMonitor, Inc.",
-  "Registrar IANA ID": "292",
-  "Registrar Abuse Contact Phone": "+1.2083895770",
-  "URL of the ICANN WHOIS Data Problem Reporting System": "http",
-  ">>> Last update of WHOIS database": "2022-02-25T16",
-  "https": "//domains.markmonitor.com/whois",
-  "Visit MarkMonitor at https": "//www.markmonitor.com",
-  "Information Updated": "2022-02-25 16"
+  "DomainName": "github.com",
+  "RegistryDomainID": "1264983250_DOMAIN_COM-VRSN",
+  "RegistrarWHOISServer": "whois.markmonitor.com",
+  "RegistrarURL": "http",
+  "UpdatedDate": "2022-09-07T09",
+  "CreationDate": "2007-10-09T18",
+  "RegistrarRegistrationExpirationDate": "2024-10-09T00",
+  "RegistrarIANAID": "292",
+  "RegistrarAbuseContactPhone": "+1.2086851750",
+  "DomainStatus": "clientDeleteProhibited (https",
+  "RegistrantOrganization": "GitHub, Inc.",
+  "RegistrantStateProvince": "CA",
+  "RegistrantCountry": "US",
+  "RegistrantEmail": "Select Request Email Form at https",
+  "AdminOrganization": "GitHub, Inc.",
+  "AdminStateProvince": "CA",
+  "AdminCountry": "US",
+  "AdminEmail": "Select Request Email Form at https",
+  "TechOrganization": "GitHub, Inc.",
+  "TechStateProvince": "CA",
+  "TechCountry": "US",
+  "TechEmail": "Select Request Email Form at https",
+  "NameServer": "dns2.p08.nsone.net",
+  "URLoftheICANNWHOISDataProblemReportingSystem": "http",
+  "LastupdateofWHOISdatabase": "2022-12-15T12",
+  "VisitMarkMonitorathttps": "//www.markmonitor.com",
+  "InformationUpdated": "2022-12-15 12"
 }
 ```
 

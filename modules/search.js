@@ -41,20 +41,12 @@ exports.findWhoIs = async (address) => {
     htmlCodes = htmlCodes['data'];
     const dom = new JSDOM(htmlCodes);
 
-    let query;
-    if (ipChecker({ exact: true }).test(address))
-        query = `body > div:nth-child(7) > div > div > div:nth-child(4) > div > div > div > pre`;
-    else {
-        query = `body > div:nth-child(7) > div.container > div:nth-child(6) > div.col-md-8.queryResponseContainer > div:nth-child(12) > div > div > div > pre`;
-    }
-    const infos = dom.window.document.querySelector(query) ? dom.window.document.querySelector(query).textContent : '';
+    let result = await this.findDataFromHtml(dom, address);
+    if (Object.keys(result).length === 0) {
 
-    const result = {};
-    for (const iterator of infos.split('\n')) {
-        const key = iterator.split(':')[0] ? iterator.split(':')[0].trim() : '';
-        const value = iterator.split(':')[1] ? iterator.split(':')[1].trim() : '';
-        if (key && value) result[key] = value;
+        result = { description: 'Whois information for this domain has been blocked.' };
     }
+
     delete result.DNSSEC;
     delete result.https;
     delete result.Registrar;
@@ -77,3 +69,28 @@ exports.getMoreInfoFromIp = async (ip, { filter, name }, skip = 1) => {
     return response.data;
 };
 
+exports.findDataFromHtml = async (dom, address) => {
+    let query;
+    if (ipChecker({ exact: true }).test(address))
+        query = `body > div:nth-child(7) > div > div > div:nth-child(4) > div > div > div > pre`;
+    else {
+        query = `body > div:nth-child(7) > div.container > div:nth-child(6) > div.col-md-8.queryResponseContainer > div:nth-child(12) > div > div > div > pre`;
+    }
+    const infos = dom.window.document.querySelector(query) ? dom.window.document.querySelector(query).textContent : '';
+    const result = {};
+    for (const iterator of infos.split('\n')) {
+        if (iterator.includes('no entries found')) {
+            result['status'] = 404;
+            result['description'] = `No match for ${address}`
+        }
+        let key = iterator.split(':')[0] ? iterator.split(':')[0].trim() : '';
+        const value = iterator.split(':')[1] ? iterator.split(':')[1].trim() : '';
+        if (key && value) {
+            if (!key.includes('%')) {
+                key = key.trim().replace(/ /g, '').replace(/>>>/g, '').replace(/\//g, '');
+                result[key] = value;
+            }
+        }
+    }
+    return result;
+};
