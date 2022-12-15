@@ -2,6 +2,7 @@
 [![npm](https://img.shields.io/npm/v/ip-info-finder.svg?style=flat-square)](https://www.npmjs.com/package/ip-info-finder)
 ![building workflow](https://github.com/hamedpa/ip-info-finder/actions/workflows/nodejs.yml/badge.svg)
 ![alt text](./img/logo.png?raw=true)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fhamedpa%2Fip-info-finder.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fhamedpa%2Fip-info-finder?ref=badge_shield)
 
 
 A Package to get more information from IP address such as whois info, country, city ,mobile, user proxy or vpn status and etc.
@@ -122,6 +123,9 @@ ipInfo.getIPInfo.location('IP-ADDRESS').then(data => {
   ]
 }
 ```
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fhamedpa%2Fip-info-finder.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fhamedpa%2Fip-info-finder?ref=badge_large)
+
 ### WHOIS
 
 <p>find whois easily by ip or website address.</p>
