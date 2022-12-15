@@ -1,6 +1,6 @@
 {
   "name": "ip-info-finder",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "you can find more info from ip such as address , country , whois info , etc",
   "main": "index.js",
   "scripts": {
