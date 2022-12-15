@@ -87,7 +87,7 @@ exports.findDataFromHtml = async (dom, address) => {
         const value = iterator.split(':')[1] ? iterator.split(':')[1].trim() : '';
         if (key && value) {
             if (!key.includes('%')) {
-                key = key.trim().replaceAll(' ', '').replaceAll('>>>', '').replaceAll('\/', '');
+                key = key.trim().replace(/ /g, '').replace(/>>>/g, '').replace(/\//g, '');
                 result[key] = value;
             }
         }
